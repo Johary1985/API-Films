@@ -1,15 +1,31 @@
 const router = require ('express').Router();
 
-const { film } = require('../../db') //Modelo de BD usado na exportação
+const { Film } = require('../../db'); //Modelo de BD usado na exportação
+
+        /* Nosso CRUD */
 
 router.get('/', async (req, res) => {
-    const Films = await film.findAll();
-    res.json (Films);
+    const films = await Film.findAll();
+    res.json (films);
 });
 
 router.post('/', async (req, res) => {
-    const Film = await film.create(req.body)
-    res.json(Film)
-})
+    const film = await Film.create(req.body)
+    res.json(film);
+});
+
+router.put('/:filmId', async (req, res) => {
+    await Film.update(req.body, {
+        where: { id: req.params.filmId }
+    });
+    res.json({success: 'Dado Atualizado com Sucesso!' })
+});
+
+router.delete('/:filmId', async (req, res) => {
+    await Film.destroy({
+        where: { id: req.params.filmId }
+    });
+    res.json({success: 'Dado apagados com Sucesso!' })
+});
 
 module.exports = router; 

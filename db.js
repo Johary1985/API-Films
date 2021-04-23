@@ -1,20 +1,43 @@
-//Neste arquivo iremos codificar a criação do DB
+/* Neste arquivo iremos codificar a criação do DB */
 
-const Sequelize = require ('sequelize')
-const modelFilme = require ('./models/films');
+const Sequelize = require ('sequelize'); // Constante para usar Sequelize
+const modelFilme = require ('./models/films'); //Rota de nosso modelo de BD
 
-const sequelize = new Sequelize({  //Conexão com o DB
+    /* Usando MySQL para BD externa (remotemysql.com) + Sequelize */
+
+const sequelize = new Sequelize(
+
+    '#######', // Username
+    '#######', // Database name
+    '#######', // Password
+    {
+        /* Comunicação de  Sequelize com nosso BD */
+        host: 'remotemysql.com',
+        dialect: 'mysql'
+    }
+
+  );
+
+    /* Usando SQlite para trabalhar local + Sequelize */
+    /* 
+    const sequelize = new Sequelize({
     dialect: 'sqlite',
-    storage: './apifilm.db'
-  });
+    storage: './bdNome.db'
+    });
 
-const film = modelFilme (sequelize, Sequelize)
+     */
 
-sequelize.sync({ force: false }) //Método de sincronização de tabela
+    /* Método de sincronização de tabela */
+
+const Film = modelFilme (sequelize, Sequelize)
+
+sequelize.sync({ force: false }) 
 .then(() => {
     console.log ('Tabelas Atualizadas'.bgGreen.black)
 })
 
+/* Modulo para exportar minha BD */
+
 module.exports ={
-    film //Modulo para exportar minha BD
+    Film 
 }
