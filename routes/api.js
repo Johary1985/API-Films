@@ -1,7 +1,7 @@
 const router = require ('express').Router();
 
-const apiFilmsRou = require ('./api/films')
+const apiProfsRou = require ('./api/profs')
 
-router.use('/films', apiFilmsRou);
+router.use('/profs', apiProfsRou);
 
 module.exports = router;
