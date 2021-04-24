@@ -19,6 +19,6 @@ API feita com todos os processos aprendidos nas salas de aula da Toti ao longo d
 ## Iniciando o projeto
 
 - `npm install`
-- `npm run dev`
+- `nodemon index.js`
 
 Enjoy!
