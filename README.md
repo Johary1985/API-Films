@@ -3,12 +3,12 @@
 Esta API faz parte do projeto final do curso de desenvolvedor FullStack da Toti Diversidad, foi criada como parte do Backend para gerenciar os professores ou alunos adicionados na BD, tem a adição de tabelas automáticas em nosso banco de dados, também inclui para selecionar se queremos trabalhar localmente com SQlite ou externamente com MySql, ambos os métodos já incluídos no arquivo `db.js`, você só precisa comentar e descomentar para selecioná-los.
 
 O projeto inclui as seguintes bibliotecas:
-* `expresso`
+* `express`
 * `mysql2`
 * `sequelize`
 * `sqlite3`
-* `analisador de corpo (não usado)`
-* `cores`
+* `body-parser (não usado)`
+* `colors`
 
 Bancos de dados usados:
 * https://remotemysql.com/
