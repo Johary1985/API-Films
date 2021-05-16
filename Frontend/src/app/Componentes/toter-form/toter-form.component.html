@@ -1,0 +1,36 @@
+<div class="col-md-4 offset-md-2">
+    <div class="card">
+      <div class="card-body">
+        <form action="">
+          <div class="form-group">
+            <input type="text" name="title" [(ngModel)]="toter.nome" placeholder="Nome" class="form-control" autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" name="title" [(ngModel)]="toter.edade" placeholder="Edade" class="form-control" autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" name="title" [(ngModel)]="toter.local" placeholder="Onde mora?" class="form-control" autofocus>
+          </div>
+          <div class="form-group">
+            <textarea name="description" [(ngModel)]="toter.area" rows="2" placeholder="Habilidades" class="form-control"></textarea>
+          </div>
+          <div class="form-group">
+            <input type="url" name="image URL" [(ngModel)]="toter.image" placeholder="Link de uma foto :)" class="form-control">
+          </div>
+          <button class="btn btn-success btn-block" (click)="edit ? updateToter() : addToter()">
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4">
+    <div class="card card-body text-center">
+    <img [src]="toter.image == '' ? '/assets/noimage.png' : toter.image" alt="No Image" class="card-img-top">
+      <h3>{{toter.id}}. {{toter.nome == '' ? 'Toter Nome' : toter.nome}}</h3>
+      <h3>{{toter.id}}. {{toter.edade == '' ? 'Toter Edade' : toter.edade}}</h3>
+      <p> {{toter.id}}. {{toter.local == '' ? 'Onde ele Mora?' : toter.local}}</p>
+      <p>{{toter.area == '' ? 'O que ele Faz bem?' : toter.area}}</p>
+    </div>
+  </div>

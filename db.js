@@ -7,9 +7,9 @@ const modelProfe = require ('./models/profs'); //Rota de nosso modelo de BD
 
 const sequelize = new Sequelize(
 
-    '###', // Username
-    '###', // Database name
-    '###', // Password
+    'EqVfzChdZ2', // Username
+    'EqVfzChdZ2', // Database name
+    'kmRNFbmxpt', // Password
     {
         /* Comunicação de  Sequelize com nosso BD */
         host: 'remotemysql.com',

@@ -12,7 +12,7 @@ module.exports = (sequelize, type) => {
         edade: type.INTEGER,
         area: type.STRING,
         local: type.STRING,
-        image: type.BLOB,
+        image: type.STRING,
     })
 }
 
